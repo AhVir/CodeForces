@@ -18,7 +18,7 @@ int main(){
     int dist; cin >> dist;
     int remain = totalTime - dist;
 
-    cout << remain << endl;
+    // cout << remain << endl;
 
     int prob1 = 5;
     int ans = 0;
@@ -32,7 +32,7 @@ int main(){
         ans++;
     }
 
-    cout << spend << endl;
+    // cout << spend << endl;
     cout << ans << endl;
 
     return 0;
