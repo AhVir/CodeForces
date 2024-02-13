@@ -44,54 +44,6 @@ int main(){
             }
         }
 
-        if(oddCount >= k){
-            oddCount -= k;
-            if(oddCount == 0 || oddCount == 1) cout << "Yes" << endl;
-            else{
-                cout << "No" << endl;
-            }
-            continue;
-        }else{
-            k-=oddCount;
-            int step1 = k;
-            int step2 = k+1;
-            if(step1%2 == 0){
-                while(step1 > 0){
-                    if(count.size() == 0){
-                        cout << "No" << endl;
-                        continue;
-                    }
-                    count.pop_back();
-                    step1 -= 2;
-                }
-                if(!count.empty()){
-                    cout << "Yes" << endl;
-                }
-                else{
-                    cout << "No" << endl;
-                }
-                continue;
-            }
-            else if(step2%2 == 0){
-                while(step2 > 0){
-                    if(count.size() == 0){
-                        cout << "No" << endl;
-                        continue;
-                    }
-                    count.pop_back();
-                    step2 -=2;
-                }
-                if(!count.empty()){
-                    cout << "Yes" << endl;
-                }
-                else{
-                    cout << "No" << endl;
-                }
-                continue;
-            }
-        }
-
-
     }
 
     return 0;
