@@ -22,15 +22,15 @@ int main(){
         cin >> temp.first >> temp.second;
         teams.push_back(temp);
     }
-    int count = 0;
+    int cnt = 0;
 
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             if(j==i) continue;
-            if(teams[i].first == teams[j].second) count++;
+            if(teams[i].first == teams[j].second) cnt++;
         }
     }
-    cout << count << endl;
+    cout << cnt << endl;
 
     return 0;
 }
