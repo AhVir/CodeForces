@@ -1,7 +1,9 @@
-3
-10
-.@@*@.**@@
-5
-.@@@@
-15
-.@@..@***..@@@*
+8
+ABABB
+ABABA
+BBBAB
+AAAAA
+BBBBB
+BABAA
+AAAAB
+BAAAA
