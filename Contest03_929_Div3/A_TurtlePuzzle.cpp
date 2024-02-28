@@ -24,18 +24,12 @@ int main(){
     while(t--){
         int n; cin >> n;
         int ar[n];
+        int sum = 0;
         for(int i=0; i<n; i++){
             int temp; cin >> temp;
-            ar[i] = temp;
+            sum += abs(temp);
         }
-
-        int minIdx = INT_MAX, maxIdx = INT_MIN;
-        for(int i=0; i<n; ++i){
-            if(ar[i] < 0){
-                minIdx = min(minIdx, i);
-                maxIdx = max(maxIdx, i);
-            }
-        }
+        cout << sum << endl;
     }
 
 
