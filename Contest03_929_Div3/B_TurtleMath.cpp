@@ -12,33 +12,6 @@ using namespace std;
 #define pp(x) cout <<x<<endl
 #define ps(x) cout <<#x<<endl
 
-int minSum(vector<int>& v, int i, int move){
-    //base case:
-    if(i >= v.size()){
-        return INT_MAX;
-    }
-
-    int sum = accumulate(v.begin(), v.end(), 0);
-    if(sum%3 == 0){
-        return move;
-    }
-
-
-    //recursive call:
-    //removing:
-    auto it = v.begin() + i;
-    int temp = *it;
-    v.erase(it);
-    int call1 = minSum(v, i+1, move+1);
-    v.insert(it, temp);
-
-    //increasing:
-    v[i+1]++;
-    int call2 = minSum(v, i+1, move+1);
-
-    return min(call1, call2);
-}
-
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -50,21 +23,29 @@ int main(){
 
     while(t--){
         int n; cin >> n;
-        vector<int> vec;
-
+        int ar[n];
         int sum = 0;
-        for(int i=0; i<n; i++){
+        for(int i=0; i<n;i++){
             int temp; cin >> temp;
-            vec.pb(temp);
-            sum += temp;
+            ar[i] = temp;
+            sum+=temp;
         }
 
         if(sum%3 == 0){
-            cout << '0' << endl;
+            cout << "0" << endl;
         }
         else{
-            int res = minSum(vec, 0, 0);
-            cout << res << endl;
+            int flag = 0;
+            for(int i=0; i<n; i++){
+                if((sum-ar[i])%3 == 0){
+                    cout << '1' << endl;
+                    flag = 1;
+                    break;
+                }
+            }
+            if(!flag){
+                cout << 3-(sum%3) << endl;
+            }
         }
     }
 
