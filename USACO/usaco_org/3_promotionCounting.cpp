@@ -4,28 +4,17 @@
 using namespace std;
 
 int main(){
-    // freopen("promote.in", "r", stdin); freopen("promote.out", "w", stdout);
-
+    freopen("promote.in", "r", stdin); freopen("promote.out", "w", stdout);
 
     int a1, a2, b1, b2, c1, c2, d1, d2;
     cin >> a1 >> a2 >> b1 >> b2 >> c1 >> c2 >> d1 >> d2;
 
-    int cntSlv = 0, cntGld = 0, cntPlat = 0;
+    int plat = (d2-d1); //for Plat
+    int gold = (d2-d1)+(c2-c1);  //for Gold
+    int silver = (d2-d1)+(c2-c1)+(b2-b1); //for silver
 
-    int diffPlat = d2-d1; cntPlat += diffPlat;
-    int diffGld = c2-c1; cntGld += diffGld;
-    int diffSlv = b2-b1; cntSlv += diffSlv;
+    cout << silver << endl << gold << endl << plat << endl;
 
-    if(diffPlat != 0){
-        if(diffGld == 0) cntGld++;
-        if(diffSlv == 0) cntSlv++;
-    }
-
-    if(diffGld != 0){
-        if(diffSlv == 0) cntSlv++;
-    }
-
-    cout << diffSlv << endl << diffGld << endl << diffPlat << endl;
 
     return 0;
 }
