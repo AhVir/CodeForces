@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "ostream": "cpp",
+        "span": "cpp",
+        "array": "cpp",
+        "cmath": "cpp",
+        "cstddef": "cpp"
+    }
+}
